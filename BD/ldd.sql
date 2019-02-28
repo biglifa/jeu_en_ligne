@@ -87,7 +87,7 @@ CREATE TABLE Image(
         id_img  Number(4) PRIMARY KEY,
         Si_mur  Number(1) CHECK (Si_mur=1 or Si_mur=0) ,
         symbole Char (1) ,
-        id_col  Int NOT NULL ,
+        id_col  Number(4) ,
 CONSTRAINT Image_Collection_FK FOREIGN KEY (id_col) REFERENCES Collection(id_col)
 );
 
@@ -101,7 +101,9 @@ CREATE TABLE Case (
         abs_case Number(2) ,
         ord_case Number(2) ,
         id_img   Number(4) NOT NULL ,
-CONSTRAINT Case_Image_FK FOREIGN KEY (id_img) REFERENCES Image(id_img));
+	id_laby Number(4) NOT NULL ,
+CONSTRAINT Case_Image_FK FOREIGN KEY (id_img) REFERENCES Image(id_img)
+CONSTRAINT Case_Labyrinthe_FK FOREIGN KEY (id_laby) REFERENCES Labyrinthe(id_laby));
 
 
 
@@ -131,9 +133,9 @@ CONSTRAINT Intervenir_Niveau0_FK FOREIGN KEY (id_niveau) REFERENCES Niveau(id_ni
 );
 
 
-#------------------------------------------------------------
-# Table: Reperer
-#------------------------------------------------------------
+------------------------------------------------------------
+-- Table: Reperer
+------------------------------------------------------------
 
 CREATE TABLE Reperer(
         id_partie Number(4) NOT NULL ,
