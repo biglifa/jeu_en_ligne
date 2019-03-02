@@ -10,7 +10,7 @@
 CREATE TABLE Niveau (
         id_niveau  Number(4) ,
         complexite VARCHAR2(10) NOT NULL ,
-        duree      VARCHAR2(5) NOT NULL ,
+        duree      VARCHAR2(10) NOT NULL ,
         nb_points  NUMBER(4) ,
 CONSTRAINT Niveau_PK PRIMARY KEY (id_niveau));
 
