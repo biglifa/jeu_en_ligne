@@ -25,7 +25,7 @@ CREATE TABLE Utilisateur(
         nom       Varchar2 (20) ,
         mot_pass  VARCHAR2 (20) ,
         dateN     Date ,
-        id_niveau Number(4) NOT NULL ,
+        id_niveau Number(4) ,
 CONSTRAINT Utilisateur_PK PRIMARY KEY (pseudo),
 CONSTRAINT Utilisateur_Niveau_FK FOREIGN KEY (id_niveau) REFERENCES Niveau(id_niveau)
 );
@@ -96,13 +96,13 @@ CONSTRAINT Image_Collection_FK FOREIGN KEY (id_col) REFERENCES Collection(id_col
 -- Table: Case
 ------------------------------------------------------------
 
-CREATE TABLE Case (
+CREATE TABLE Cases (
         id_case  Number(4) PRIMARY KEY ,
         abs_case Number(2) ,
         ord_case Number(2) ,
         id_img   Number(4) NOT NULL ,
 	id_laby Number(4) NOT NULL ,
-CONSTRAINT Case_Image_FK FOREIGN KEY (id_img) REFERENCES Image(id_img)
+CONSTRAINT Case_Image_FK FOREIGN KEY (id_img) REFERENCES Image(id_img),
 CONSTRAINT Case_Labyrinthe_FK FOREIGN KEY (id_laby) REFERENCES Labyrinthe(id_laby));
 
 
@@ -115,7 +115,7 @@ CREATE TABLE Construire(
         id_case Number(4) NOT NULL ,
         id_laby Number(4) NOT NULL ,
 CONSTRAINT Construire_PK PRIMARY KEY (id_case,id_laby),
-CONSTRAINT Construire_Case_FK FOREIGN KEY (id_case) REFERENCES Case(id_case),
+CONSTRAINT Construire_Case_FK FOREIGN KEY (id_case) REFERENCES Cases(id_case),
 CONSTRAINT Construire_Labyrinthe0_FK FOREIGN KEY (id_laby) REFERENCES Labyrinthe(id_laby)
 );
 
@@ -145,6 +145,6 @@ CREATE TABLE Reperer(
         col_user Number(2) ,
         CONSTRAINT Reperer_pk PRIMARY KEY (id_partie, id_case, instant_t),
         CONSTRAINT Reperer_Partie_fk FOREIGN KEY (id_partie) REFERENCES Partie(id_partie),
-        CONSTRAINT Reperer_Case_fk FOREIGN KEY (id_case) REFERENCES Case(id_Case));
+        CONSTRAINT Reperer_Case_fk FOREIGN KEY (id_case) REFERENCES Cases(id_Case));
 
 

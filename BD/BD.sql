@@ -1,0 +1,10 @@
+drop table reperer;
+drop table intervenir;
+drop table construire;
+drop table case;
+drop table image;
+drop table collection;
+drop table labyrinthe;
+drop table partie;
+drop table utilisateur;
+drop table niveau;
