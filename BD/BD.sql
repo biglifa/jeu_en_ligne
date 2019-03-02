@@ -1,7 +1,7 @@
 drop table reperer;
 drop table intervenir;
 drop table construire;
-drop table case;
+drop table cases;
 drop table image;
 drop table collection;
 drop table labyrinthe;
