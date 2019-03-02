@@ -1,0 +1,5 @@
+INSERT INTO labyrinthe VALUES (201,5,1,4,5,5,5,2);
+INSERT INTO labyrinthe VALUES (202,1,4,3,1,5,5,2);
+INSERT INTO labyrinthe VALUES (203,5,5,2,1,5,5,2);
+INSERT INTO labyrinthe VALUES (204,1,4,1,2,5,5,2);
+INSERT INTO labyrinthe VALUES (205,1,4,2,5,5,5,2);
