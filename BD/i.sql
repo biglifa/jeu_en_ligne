@@ -13,3 +13,21 @@ INSERT INTO labyrinthe VALUES (303,1,6,6,1,6,6,3);
 INSERT INTO labyrinthe VALUES (304,3,1,3,6,6,6,3);
 INSERT INTO labyrinthe VALUES (305,1,4,1,2,6,6,3);
 
+
+------------------------------------------------------------
+-- Table: Collection
+------------------------------------------------------------
+
+INSERT INTO collection VALUES (1,'image','etoile');
+INSERT INTO collection VALUES (2,'image','rond');
+INSERT INTO collection VALUES (3,'image','plus');
+
+
+------------------------------------------------------------
+-- Table: Image
+------------------------------------------------------------
+
+INSERT INTO image VALUES (1,0,'*','1');
+INSERT INTO image VALUES (2,0,'o','2');
+INSERT INTO image VALUES (3,0,'+','3');
+INSERT INTO image VALUES (4,1);
