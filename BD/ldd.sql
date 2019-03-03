@@ -93,7 +93,7 @@ CONSTRAINT Image_Collection_FK FOREIGN KEY (id_col) REFERENCES Collection(id_col
 
 
 ------------------------------------------------------------
--- Table: Case
+-- Table: Cases
 ------------------------------------------------------------
 
 CREATE TABLE Cases (
@@ -101,7 +101,7 @@ CREATE TABLE Cases (
         abs_case Number(2) ,
         ord_case Number(2) ,
         id_img   Number(4) NOT NULL ,
-	id_laby Number(4) NOT NULL ,
+        id_laby Number(4) NOT NULL ,
 CONSTRAINT Case_Image_FK FOREIGN KEY (id_img) REFERENCES Image(id_img),
 CONSTRAINT Case_Labyrinthe_FK FOREIGN KEY (id_laby) REFERENCES Labyrinthe(id_laby));
 
