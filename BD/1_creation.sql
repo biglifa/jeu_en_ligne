@@ -139,7 +139,7 @@ CREATE TABLE Reperer(
         id_case   Number(4) NOT NULL ,
         instant_t TimeStamp NOT NULL ,
         abs_user  Number(2) ,
-        col_user Number(2) ,
+        ord_user Number(2) ,
         CONSTRAINT Reperer_pk PRIMARY KEY (id_partie, id_case, instant_t),
         CONSTRAINT Reperer_Partie_fk FOREIGN KEY (id_partie) REFERENCES Partie(id_partie),
         CONSTRAINT Reperer_Case_fk FOREIGN KEY (id_case) REFERENCES Cases(id_Case));
