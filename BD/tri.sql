@@ -28,8 +28,15 @@ end;
 
 
 --trigger blocage niveau
-CREATE OR REPLACE TRIGGER tb_blocage_niveau(vpseudo Utilisateur,pseudo%type) IS
-
+CREATE OR REPLACE TRIGGER tbi_blocage_niveau 
+before insert on Partie 
 begin
-    
+    if :old.id_niveau=NULL then
+        if :new.id_niveau>=2 then
+            raise_application_error ('Tempo tempo, niveau 1 d abord');end if;
+    else 
+        if :new.id_niveau>:old.id_niveau then
+        raise_application_error ('Tempo tempo, valide ton niveau d abord '||:old.id_niveau); end if;
+    end if;
+end;
 
