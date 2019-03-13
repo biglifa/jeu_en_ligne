@@ -33,6 +33,7 @@ CONSTRAINT Niveau_PK PRIMARY KEY (id_niveau));
 CREATE TABLE Utilisateur(
         pseudo    VARCHAR2 (20) ,
         nom       Varchar2 (20) ,
+        prenom    VARCHAR  (20),
         mot_pass  VARCHAR2 (20) ,
         id_niveau Number(4) ,
 CONSTRAINT Utilisateur_PK PRIMARY KEY (pseudo),
