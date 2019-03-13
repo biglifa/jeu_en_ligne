@@ -49,7 +49,7 @@ CREATE TABLE Partie(
         id_partie Number(4) ,
         heure_deb Varchar2(5) ,
         heure_fin Varchar2(5) ,
-        score     Number(4) not null,
+        score     Number(4),
         gagner    Number(1) check (gagner=1 or gagner=0)  ,
         pseudo    Varchar2(20) NOT NULL ,
         id_niveau Number(4) NOT NULL ,
