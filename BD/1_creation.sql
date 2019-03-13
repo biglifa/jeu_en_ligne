@@ -34,7 +34,6 @@ CREATE TABLE Utilisateur(
         pseudo    VARCHAR2 (20) ,
         nom       Varchar2 (20) ,
         mot_pass  VARCHAR2 (20) ,
-        dateN     Date ,
         id_niveau Number(4) ,
 CONSTRAINT Utilisateur_PK PRIMARY KEY (pseudo),
 CONSTRAINT Utilisateur_Niveau_FK FOREIGN KEY (id_niveau) REFERENCES Niveau(id_niveau)
@@ -96,7 +95,7 @@ CREATE TABLE Collection(
 CREATE TABLE Image(
         id_img  Number(4) PRIMARY KEY,
         Si_mur  Number(1) CHECK (Si_mur=1 or Si_mur=0) ,
-        symbole Char (1) ,
+        symbole VARCHAR2(20) ,
         id_col  Number(4) ,
 CONSTRAINT Image_Collection_FK FOREIGN KEY (id_col) REFERENCES Collection(id_col)
 );
@@ -143,5 +142,6 @@ CREATE TABLE Reperer(
         CONSTRAINT Reperer_pk PRIMARY KEY (id_partie, id_case, instant_t),
         CONSTRAINT Reperer_Partie_fk FOREIGN KEY (id_partie) REFERENCES Partie(id_partie),
         CONSTRAINT Reperer_Case_fk FOREIGN KEY (id_case) REFERENCES Cases(id_Case));
+
 
 
