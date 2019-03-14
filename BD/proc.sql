@@ -11,12 +11,12 @@ CREATE OR REPLACE PROCEDURE insert_util(vpseudo    utilisateur.pseudo%TYPE,
 IS
 BEGIN
       INSERT INTO utilisateur VALUES(vpseudo,vnom,vprenom,vmot_pass,NULL);
-      DBMS_OUTPUT.PUT_LINE('Felicitations!,vous avez bien eté enregistré');
+      DBMS_OUTPUT.PUT_LINE('Felicitations!,vous avez bien etï¿½ enregistrï¿½');
       
 EXCEPTION 
 
         WHEN DUP_VAL_ON_INDEX 
-        THEN DBMS_OUTPUT.PUT_LINE('ce pseudo existe deja ,essayez un autre');
+        THEN DBMS_OUTPUT.PUT_LINE('Ce pseudo existe deja ,essayez un autre');
 
 END;
 /
